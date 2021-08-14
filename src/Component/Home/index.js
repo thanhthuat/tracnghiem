@@ -17,22 +17,21 @@ class Home extends Component {
            }
         }
        
-        let dem =0
-        if (this.props.Result2!=null){
+     
+      
             for(let i of this.props.question_Type2){
-                console.log(this.props.Result2[dem].content.toUpperCase());
-             if (i.answers[0].content.toUpperCase() ===this.props.Result2[dem].content.toUpperCase()) 
-              {
-                diem++ 
-              }
-              if(this.props.Result2.length>= dem){
-                dem++;
-              } 
-             
-    
-               console.log(i.answers[0].content.toUpperCase()); 
+               for( let j of this.props.Result2){
+                console.log(j);
+                if(i.id === (+j.id)){
+                    
+                    if(i.answers[0].content.toUpperCase() === j.content.toUpperCase()){
+                        diem++
+                    }
+                }
+               }
+             //  console.log(i.answers[0].content.toUpperCase()); 
             }
-        }
+        
       
      
             

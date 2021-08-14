@@ -39,7 +39,7 @@ const Quesstion = (state = intialstate, action) => {
                 update.push(action.payload)
             }
             state.Result2 = update;
-            console.log('Result2',state.Result2);
+           console.log('Result2',state.Result2);
             return { ...state }
         }
 
