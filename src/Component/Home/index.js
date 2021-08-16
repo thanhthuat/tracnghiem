@@ -8,17 +8,14 @@ import FillQuesstion from '../Quesstion/FillQuesstion';
 
 class Home extends Component {
     
-    showResult =()=>{
-       
+    showResult =(event)=>{
+        event.preventDefault();
         let diem=0
         for(let i of  this.props.Result1){
            if (i.exact ==true){
                diem++
            }
         }
-       
-     
-      
             for(let i of this.props.question_Type2){
                for( let j of this.props.Result2){
                 console.log(j);
@@ -30,22 +27,18 @@ class Home extends Component {
                 }
                }
              //  console.log(i.answers[0].content.toUpperCase()); 
-            }
-        
-      
-     
-            
-        
+            }    
         console.log('deim',diem );
        alert('diem='+diem +'/8')
     }
     render() {
         return (
             <div>
-               
+               <form onSubmit={this.showResult}>
                {this.props.question_Type1 !=null ?<ChosseQuesstion/>:''} 
                {this.props.question_Type2 !=null ? <FillQuesstion />:''} 
-               <button onClick ={()=>this.showResult()}>Submit</button>
+               <button onClick ={()=>this.showResult}>Submit</button>
+               </form>
             </div>
         );
     }
